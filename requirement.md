@@ -1,11 +1,11 @@
 # Requirement
 - [x] Application run on port 9000
 - [x] Application must be run with command `npm run start`
-- [x] API can store books
-- [x] API can display entire books
-- [x] API can display book details
-- [x] API can modify book data
-- [x] API can delete books
+- [x] API can [store books](# Get All Books)
+- [x] API can [display entire books](# Store Books)
+- [x] API can [display book details](# Get a Book by id)
+- [x] API can [modify book data](# Update a Book by id)
+- [x] API can [delete books](# Delete a Book by id)
 
 # Model for Payload
 ```json
@@ -51,6 +51,34 @@ Properti yang ditebalkan diolah dan didapatkan di sisi server. Berikut penjelasa
 |------------|------------|------------------------------|
 | GET        | /books     | Get All Books                |
 
+Sample Response
+```json
+{
+    "status": "success",
+    "data": {
+        "books": [
+            {
+                "id": "Qbax5Oy7L8WKf74l",
+                "name": "Buku A",
+                "publisher": "Dicoding Indonesia"
+            },
+            {
+                "id": "1L7ZtDUFeGs7VlEt",
+                "name": "Buku B",
+                "publisher": "Dicoding Indonesia"
+            },
+            {
+                "id": "K8DZbfI-t3LrY7lD",
+                "name": "Buku C",
+                "publisher": "Dicoding Indonesia"
+            }
+        ]
+    }
+}
+```
+
+Sample Response 
+
 ## Store Books
 | **Method** | **Route**  | **Name**                     |
 |------------|------------|------------------------------|
@@ -61,12 +89,75 @@ Properti yang ditebalkan diolah dan didapatkan di sisi server. Berikut penjelasa
 |------------|------------|------------------------------|
 | GET        | /books/:id | Get a Detail Book With ID    |
 
+Success Response
+```json
+{
+    "status": "success",
+    "data": {
+        "book": {
+            "id": "aWZBUW3JN_VBE-9I",
+            "name": "Buku A Revisi",
+            "year": 2011,
+            "author": "Jane Doe",
+            "summary": "Lorem Dolor sit Amet",
+            "publisher": "Dicoding",
+            "pageCount": 200,
+            "readPage": 26,
+            "finished": false,
+            "reading": false,
+            "insertedAt": "2021-03-05T06:14:28.930Z",
+            "updatedAt": "2021-03-05T06:14:30.718Z"
+        }
+    }
+}
+```
+
+Failed Response
+```json
+{
+    "status": "fail",
+    "message": "Buku tidak ditemukan"
+}
+```
+
 ## Update a Book by id
 | **Method** | **Route**  | **Name**                     |
 |------------|------------|------------------------------|
 | PUT        | /books/:id | Update a Detail Book With ID |
 
+Success Response
+```json
+{
+    "status": "success",
+    "message": "Buku berhasil diperbarui"
+}
+```
+
+Failed Response
+```json
+{
+    "status": "fail",
+    "message": "Gagal memperbarui buku. Mohon isi nama buku"
+}
+```
+
 ## Delete a Book by id
 | **Method** | **Route**  | **Name**                     |
 |------------|------------|------------------------------|
 | DELETE     | /books/:id | Delete a Book With ID        |
+
+Success Response
+```json
+{
+    "status": "success",
+    "message": "Buku berhasil dihapus"
+}
+```
+
+Failed Response
+```json
+{
+    "status": "fail",
+    "message": "Buku gagal dihapus. Id tidak ditemukan"
+}
+```
