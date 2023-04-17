@@ -1,11 +1,11 @@
 # Requirement
 - [x] Application run on port 9000
 - [x] Application must be run with command `npm run start`
-- [x] API can [store books](# Get All Books)
-- [x] API can [display entire books](# Store Books)
-- [x] API can [display book details](# Get a Book by id)
-- [x] API can [modify book data](# Update a Book by id)
-- [x] API can [delete books](# Delete a Book by id)
+- [x] API can [store books](#get-all-books)
+- [x] API can [display entire books](#store-books)
+- [x] API can [display book details](#get-a-book-by-id)
+- [x] API can [modify book data](#update-a-book-by-id)
+- [x] API can [delete books](#delete-a-book-by-id)
 
 # Model for Payload
 ```json
