@@ -1,8 +1,8 @@
 # Requirement
-1. Aplikasi menggunakan port 9000
-2. Aplikasi dijalankan dengan perintah `npm run start`
-3. API dapat menyimpan buku
-4. API dapat menampilkan seluruh buku
-5. API dapat menampilkan detail buku
-6. API dapat mengubah data buku
-7. API dapat menghapus buku
+[x] Application run on port 9000
+[x] Application must be run with command `npm run start`
+[x] API can store books
+[x] API can display entire books
+[x] API can display book details
+[x] API can modify book data
+[x] API can delete books
